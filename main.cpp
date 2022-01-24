@@ -1,7 +1,28 @@
 #include <iostream>
 #include <string>
+#include <utility>
 
 void isMyNameLong(const std::string& name);
+
+class Dog {
+public:
+    int age{};
+    std::string name;
+    Dog *children{};
+    int childNumber;
+    Dog(std::string dogName, int age) {
+        name = std::move(dogName);
+        age = age;
+        childNumber = 0;
+        children = static_cast<Dog *>(malloc(sizeof(Dog)));
+    }
+    Dog createPuppy(std::string puppyName) {
+        Dog puppy(std::move(puppyName), 0);
+        children[childNumber++] = puppy;
+        children = static_cast<Dog *>(realloc(children, sizeof(Dog) * childNumber + 1));
+        return puppy; // Will I screwed this up fix it for me, this function accidentally creates 3 versions of "puppy" and we only want one.
+    }
+};
 
 class Covid19 {
 public:
