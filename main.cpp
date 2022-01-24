@@ -50,7 +50,7 @@ int main() {
     std::cout << "Your name is " << fullname << std::endl;
     isMyNameLong(firstname);
     std::cout << "Memory address for " << firstname << " is " << &firstname << std::endl;
-    std::cout << "And for " << surname << " is " << &surname;
+    std::cout << "And for " << surname << " is " << &surname << std::endl;
     Covid19 ahh{};
     ahh.doIHaveCovid();
     ahh.canIHaveAVaccine();
