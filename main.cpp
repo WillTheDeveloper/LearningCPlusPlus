@@ -58,24 +58,50 @@ public:
     }
 };
 
+class Yourself {
+public:
+    void characterCount(const std::string& character)
+    {
+        std::cout << character << " has " << character.length() << " characters." << std::endl;
+    }
+    /*void reverseIt(const std::string& remy)
+    {
+        for (int i = 0; i < remy.length() / 2; i++)
+        {
+            std::swap(remy[i], remy[remy.length() - i - 1]);
+        }
+    }*/
+};
+
 int main() {
     std::basic_string<char> firstname;
     std::basic_string<char> surname;
 
     std::cout << "Hello, World!" << std::endl;
+
     std::cout << "Enter your first name: ";
     std::cin >> firstname;
+
     std::cout << "Enter your last name: ";
     std::cin >> surname;
+
     std::string fullname = firstname + " " + surname;
     std::cout << "Your name is " << fullname << std::endl;
+
     isMyNameLong(firstname);
+
+    Yourself you{};
+    you.characterCount(firstname);
+    you.characterCount(surname);
+
     std::cout << "Memory address for " << firstname << " is " << &firstname << std::endl;
     std::cout << "And for " << surname << " is " << &surname << std::endl;
+
     Covid19 ahh{};
     ahh.doIHaveCovid();
     ahh.canIHaveAVaccine();
     ahh.isCovidCool();
+
     askForCovidTest();
 
     return 0;
