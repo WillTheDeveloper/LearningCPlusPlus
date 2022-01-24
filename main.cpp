@@ -6,7 +6,13 @@ void isMyNameLong(const std::string& name);
 class Covid19 {
 public:
     void doIHaveCovid() {
-        std::cout << "Probably";
+        std::cout << "You probably have COVID!" << std::endl;
+    }
+    void canIHaveAVaccine() {
+        std::cout << "Your not allowed a vaccine sorry." << std::endl;
+    }
+    void isCovidCool() {
+        std::cout << "COVID is not cool!" << std::endl;
     }
 };
 
@@ -24,8 +30,10 @@ int main() {
     isMyNameLong(firstname);
     std::cout << "Memory address for " << firstname << " is " << &firstname << std::endl;
     std::cout << "And for " << surname << " is " << &surname;
-    Covid19 ahh;
+    Covid19 ahh{};
     ahh.doIHaveCovid();
+    ahh.canIHaveAVaccine();
+    ahh.isCovidCool();
     return 0;
 }
 
